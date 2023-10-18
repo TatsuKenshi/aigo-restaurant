@@ -1,6 +1,15 @@
 // import Hero from "../components/Hero";
+import { useEffect } from "react";
+import usePageTitle from "../hooks/usePageTitle";
 
 const HomePage = () => {
+  const { changeTitle } = usePageTitle();
+  const language = "sr";
+
+  useEffect(() => {
+    changeTitle({ language: language, enTitle: "Home", srTitle: "Početna" });
+  }, [language, changeTitle]);
+
   return (
     <section>
       {/* title div */}

@@ -6,37 +6,37 @@ const Footer = () => {
       {/* content section */}
       <section className="max-w-[1200px] mx-auto h-full flex flex-wrap">
         <div className="w-full md:w-1/2 lg:w-1/4 mb-12 md:mb-8">
-          <h4>{"FooterName"}</h4>
-          <div className="h-[4px] w-full md:w-11/12 max-w-[1200px] bg-yellow-700 bg-opacity-70 my-2"></div>
+          <h4>Aigo Eat</h4>
+          <div className="h-[4px] w-full md:w-11/12 max-w-[1200px] bg-yellow-100 bg-opacity-70 my-2"></div>
         </div>
         <div className="w-full md:w-1/2 lg:w-1/4 mb-12 md:mb-8">
-          <h4>{"FooterAbout"}</h4>
-          <div className="h-[4px] w-full md:w-11/12 max-w-[1200px] bg-yellow-700 bg-opacity-70 my-2"></div>
+          <h4>About</h4>
+          <div className="h-[4px] w-full md:w-11/12 max-w-[1200px] bg-yellow-100 bg-opacity-70 my-2"></div>
           <p>
-            {"FooterCompanySeat"} <br /> {"FooterCompanyAddress"}
+            Company Seat <br /> CompanyAddress
           </p>
           <p>
-            {"FooterHours"}
+            Hours
             <br />
-            {"FooterHoursDisplay"}
+            HoursDisplay
           </p>
         </div>
         <div className="w-full md:w-1/2 lg:w-1/4 mb-12 md:mb-8">
-          <h4>{"FooterContact"}</h4>
-          <div className="h-[4px] w-full md:w-11/12 max-w-[1200px] bg-yellow-700 bg-opacity-70 my-2"></div>
+          <h4>Contact</h4>
+          <div className="h-[4px] w-full md:w-11/12 max-w-[1200px] bg-yellow-100 bg-opacity-70 my-2"></div>
           <p>
-            {"FooterContactPhone"} <br />
+            Contact Phone <br />
             +381 66 426 624
           </p>
           <p>
-            {"FooterContactEmail"}
+            Contact Email
             <br />
             <a href="" className="underline">
-              office@akerman.rs
+              info@aigokoreanfood.rs
             </a>
             <br />
             <a href="" className="underline">
-              adv@akerman.rs
+              management@aigokoreanfood.rs
             </a>
           </p>
         </div>
@@ -44,7 +44,7 @@ const Footer = () => {
         {/* links section */}
         <div className="w-full md:w-1/2 lg:w-1/4 mb-12 md:mb-8">
           <h4>{"FooterLinks"}</h4>
-          <div className="h-[4px] w-full md:w-11/12 max-w-[1200px] bg-yellow-700 bg-opacity-70 my-2"></div>
+          <div className="h-[4px] w-full md:w-11/12 max-w-[1200px] bg-yellow-100 bg-opacity-70 my-2"></div>
           <p>
             <Link to="/">{"Home"}</Link>
           </p>
@@ -58,7 +58,7 @@ const Footer = () => {
             <Link to="/about">{"About"}</Link>
           </p>
         </div>
-        <div className="h-[4px] w-full max-w-[1200px] bg-yellow-700 bg-opacity-70 mx-auto my-2"></div>
+        <div className="h-[4px] w-full max-w-[1200px] bg-yellow-100 bg-opacity-70 mx-auto my-2"></div>
       </section>
 
       {/* copyright section */}

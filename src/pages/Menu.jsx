@@ -1,8 +1,17 @@
+import { useEffect } from "react";
 import MenuItemCard from "../components/MenuItemCard";
 import { useOutletContext } from "react-router-dom";
+import usePageTitle from "../hooks/usePageTitle";
 
 const Menu = () => {
   const { menuItemsShort } = useOutletContext();
+
+  const { changeTitle } = usePageTitle();
+  const language = "en";
+
+  useEffect(() => {
+    changeTitle({ language: language, enTitle: "Menu", srTitle: "Meni" });
+  }, [language, changeTitle]);
 
   return (
     <section className="px-8">

@@ -7,6 +7,14 @@ import Contact from "./pages/Contact";
 import About from "./pages/About";
 import ErrorPage from "./pages/ErrorPage";
 
+// localizacija
+// slike
+// boje
+// naslovna
+// o nama
+// kontakt
+// single item
+
 const router = createBrowserRouter([
   {
     path: "/",

@@ -20,7 +20,7 @@ const MenuItemCard = ({ id, img, name, price, desc }) => {
           className="w-full py-3 bg-[#a62817] rounded-md text-white mt-2"
           onClick={() => setItem(id)}
         >
-          Vise informacija
+          More Info
         </button>
       </Link>
     </article>

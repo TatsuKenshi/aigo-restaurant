@@ -24,12 +24,11 @@ const Sidebar = () => {
   // };
 
   const [sidebarStatus, setSidebarStatus] = useState("hidden");
-  console.log(setSidebarStatus);
 
   return (
     <aside
-      className={`z-[100] h-full w-full text-white bg-[#a62817]  bg-opacity-90 fixed top-0 right-0 sm:w-8/12 md:w-6/12 lg:hidden ${
-        sidebarStatus === "hidden" ? "translate-x-full" : "translate-x-0"
+      className={`z-[100] h-full w-full text-white bg-[#a62817]  bg-opacity-90 fixed top-0 left-0 sm:w-8/12 md:w-6/12 lg:hidden ${
+        sidebarStatus === "hidden" ? "-translate-x-full" : "-translate-x-0"
       } ease-in-out duration-1000`}
     >
       {/* logo and toggle button section */}
