@@ -1,5 +1,8 @@
 import { useEffect } from "react";
 import usePageTitle from "../hooks/usePageTitle";
+import Team from "../components/Team";
+import Map from "../components/Map";
+import Story from "../components/Story";
 
 const About = () => {
   const { changeTitle } = usePageTitle();
@@ -9,7 +12,13 @@ const About = () => {
     changeTitle({ language: language, enTitle: "About", srTitle: "O nama" });
   }, [language, changeTitle]);
 
-  return <div>About</div>;
+  return (
+    <div>
+      <Map />
+      <Team />
+      <Story />
+    </div>
+  );
 };
 
 export default About;

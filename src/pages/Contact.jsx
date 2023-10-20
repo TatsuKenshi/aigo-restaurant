@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import usePageTitle from "../hooks/usePageTitle";
+import ContactForm from "../components/ContactForm";
 
 const Contact = () => {
   const { changeTitle } = usePageTitle();
@@ -9,7 +10,11 @@ const Contact = () => {
     changeTitle({ language: language, enTitle: "Contact", srTitle: "Kontakt" });
   }, [language, changeTitle]);
 
-  return <div>Contact</div>;
+  return (
+    <div>
+      <ContactForm />
+    </div>
+  );
 };
 
 export default Contact;

@@ -1,15 +1,26 @@
 import { NavLink, Link } from "react-router-dom";
 import { FaFacebook, FaTwitter, FaInstagram, FaBars } from "react-icons/fa";
+import logo from "../assets/images/logo-small.png";
+import { useNavigationContext } from "../context/NavigationContext";
 
 const Navbar = () => {
+  const {
+    setSidebarStatus,
+    rotateMenuButton,
+    setRotateMenuButton,
+    setRotateSidebarButton,
+  } = useNavigationContext();
+
   return (
-    <nav className="px-8 h-24 bg-[#a62817] text-white drop-shadow-2xl">
+    <nav className="px-8 h-24 bg-[#d75b3f] text-white drop-shadow-2xl">
       <section className="flex justify-between max-w-[1200px] mx-auto">
         {/* logo */}
         <div className="">
-          <span className="h-24 flex items-center text-3xl font-extrabold">
-            AIGO
-          </span>
+          <NavLink to="/">
+            <span className="h-24 flex items-center">
+              <img src={logo} alt="logo" className="w-16" />
+            </span>
+          </NavLink>
         </div>
 
         {/* navigation links */}
@@ -32,7 +43,7 @@ const Navbar = () => {
 
         {/* social links */}
         <div>
-          <ul className="h-24 flex items-center gap-4 hidden lg:flex text-[#ffffef]">
+          <ul className="h-24 items-center gap-4 hidden lg:flex text-[#ffffef]">
             <li>
               <Link to="https://wwww.facebook.com" target="_blank">
                 <FaFacebook size="1.5rem" />
@@ -52,8 +63,15 @@ const Navbar = () => {
         </div>
 
         <div className="flex h-24 items-center lg:hidden">
-          <button type="button">
-            <FaBars className="fill-white h-8 w-8" />
+          <button
+            type="button"
+            onClick={() => {
+              setSidebarStatus("block");
+              setRotateMenuButton("animate-[spin_0.4s_1]");
+              setRotateSidebarButton("");
+            }}
+          >
+            <FaBars className={`fill-white h-8 w-8 ${rotateMenuButton}`} />
           </button>
         </div>
       </section>

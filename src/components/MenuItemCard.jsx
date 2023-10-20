@@ -5,7 +5,7 @@ const MenuItemCard = ({ id, img, name, price, desc }) => {
   const { setItem } = useOutletContext();
 
   return (
-    <article className="w-[100%]  md:w-[45%] mb-8">
+    <article className="w-[100%]  md:w-[46%] mb-16 hover:shadow-lg">
       <img src={img} alt={name} className="w-full  rounded-t-md" />
       <div className="my-2 text-lg font-extrabold ">
         <span className="text-[#a62817] capitalize">{name}</span>

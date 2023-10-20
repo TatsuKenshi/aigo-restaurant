@@ -13,9 +13,10 @@ const HomeLayout = () => {
   const isPageLoading = navigation.state === "loading";
 
   const [item, setItem] = useState({});
+  const [sidebarStatus, setSidebarStatus] = useState("hidden");
 
   return (
-    <main className="bg-yellow-100 min-h-screen">
+    <main>
       <ScrollReset>
         <Navbar />
         <Sidebar />
@@ -25,7 +26,14 @@ const HomeLayout = () => {
             <div></div>
           ) : (
             <Outlet
-              context={{ item, setItem, menuItemsFull, menuItemsShort }}
+              context={{
+                item,
+                setItem,
+                menuItemsFull,
+                menuItemsShort,
+                sidebarStatus,
+                setSidebarStatus,
+              }}
             />
           )}
         </section>

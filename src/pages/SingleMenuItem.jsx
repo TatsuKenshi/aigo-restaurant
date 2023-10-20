@@ -3,6 +3,7 @@ import { useOutletContext, useParams } from "react-router-dom";
 
 const SingleMenuItem = () => {
   const { item, setItem, menuItemsFull } = useOutletContext();
+  console.log(item);
   const myID = useParams();
 
   const itemIngredients = Object.keys(item)
