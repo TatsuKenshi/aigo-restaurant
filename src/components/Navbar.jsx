@@ -1,9 +1,19 @@
 import { NavLink, Link } from "react-router-dom";
 import { FaFacebook, FaTwitter, FaInstagram, FaBars } from "react-icons/fa";
-import logo from "../assets/images/logo-small.png";
+// import logo from "../assets/images/logo-small.png";
+import logoBig from "../assets/images/logo-big.png";
 import { useNavigationContext } from "../context/NavigationContext";
+import i18n from "../i18n";
+import { withNamespaces } from "react-i18next";
+import english from "../assets/images/english.png";
+import serbian from "../assets/images/serbian.png";
 
-const Navbar = () => {
+const Navbar = ({ t }) => {
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+  console.log(i18n.language);
+
   const {
     setSidebarStatus,
     rotateMenuButton,
@@ -15,30 +25,85 @@ const Navbar = () => {
     <nav className="px-8 h-24 bg-[#d75b3f] text-white drop-shadow-2xl">
       <section className="flex justify-between max-w-[1200px] mx-auto">
         {/* logo */}
-        <div className="">
+        {/* <div className="">
           <NavLink to="/">
             <span className="h-24 flex items-center">
               <img src={logo} alt="logo" className="w-16" />
             </span>
           </NavLink>
+        </div> */}
+
+        <div className="">
+          <NavLink to="/">
+            <span className="h-24 flex items-center">
+              <img src={logoBig} alt="logo" className="w-16 mt-40" />
+            </span>
+          </NavLink>
         </div>
 
         {/* navigation links */}
-        <div className="hidden lg:block">
-          <ul className="h-24 flex items-center gap-6 text-2xl">
+        <div className="hidden lg:block w-[400px] justify-between">
+          <ul className="h-24 w-full flex justify-between items-center gap-6 text-2xl">
             <li>
-              <NavLink to="/">Home</NavLink>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-[#a62817] font-bold"
+                    : "hover:text-[#a62817]  font-bold"
+                }
+              >
+                {t("Početna")}
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/menu">Menu</NavLink>
+              <NavLink
+                to="/menu"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-[#a62817] font-bold"
+                    : "hover:text-[#a62817]  font-bold"
+                }
+              >
+                {t("Meni")}
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/contact">Contact</NavLink>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-[#a62817] font-bold"
+                    : "hover:text-[#a62817]  font-bold"
+                }
+              >
+                {t("Kontakt")}
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/about">About</NavLink>
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-[#a62817] font-bold"
+                    : "hover:text-[#a62817]  font-bold"
+                }
+              >
+                {t("O nama")}
+              </NavLink>
             </li>
           </ul>
+        </div>
+
+        {/* language buttons section */}
+        <div className="w-content gap-4 hidden lg:flex">
+          <button onClick={() => changeLanguage("en")}>
+            <img src={english} alt="english" className="w-6" />
+          </button>
+
+          <button onClick={() => changeLanguage("sr")}>
+            <img src={serbian} alt="serbian" className="w-6" />
+          </button>
         </div>
 
         {/* social links */}
@@ -46,17 +111,17 @@ const Navbar = () => {
           <ul className="h-24 items-center gap-4 hidden lg:flex text-[#ffffef]">
             <li>
               <Link to="https://wwww.facebook.com" target="_blank">
-                <FaFacebook size="1.5rem" />
+                <FaFacebook size="1.5rem" className="hover:fill-[#a62817]" />
               </Link>
             </li>
             <li>
               <Link to="https://wwww.twitter.com" target="_blank">
-                <FaTwitter size="1.5rem" />
+                <FaTwitter size="1.5rem" className="hover:fill-[#a62817]" />
               </Link>
             </li>
             <li>
               <Link to="https://wwww.instagram.com" target="_blank">
-                <FaInstagram size="1.5rem" />
+                <FaInstagram size="1.5rem" className="hover:fill-[#a62817]" />
               </Link>
             </li>
           </ul>
@@ -71,29 +136,12 @@ const Navbar = () => {
               setRotateSidebarButton("");
             }}
           >
-            <FaBars className={`fill-white h-8 w-8 ${rotateMenuButton}`} />
+            <FaBars className={`fill-[#a62817] h-8 w-8 ${rotateMenuButton}`} />
           </button>
         </div>
       </section>
-
-      {/* sidebar menu button section */}
-      {/* <section className="flex h-full items-center">
-        <div className="w-6 mr-4">
-          <button
-            type="button"
-            className="p-1 mr-4 lg:hidden"
-            onClick={() => {
-              setSidebarStatus("block");
-              setRotateMenuButton("animate-[spin_0.4s_1]");
-              setRotateSidebarButton("");
-            }}
-          >
-            <FaBars className={`fill-white h-8 w-8 ${rotateMenuButton}`} />
-          </button>
-        </div>
-      </section> */}
     </nav>
   );
 };
 
-export default Navbar;
+export default withNamespaces()(Navbar);

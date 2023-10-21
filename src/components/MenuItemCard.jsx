@@ -5,14 +5,22 @@ const MenuItemCard = ({ id, img, name, price, desc }) => {
   const { setItem } = useOutletContext();
 
   return (
-    <article className="w-[100%]  md:w-[46%] mb-16 hover:shadow-lg">
-      <img src={img} alt={name} className="w-full  rounded-t-md" />
-      <div className="my-2 text-lg font-extrabold ">
+    <article className="w-[100%] md:w-[46%] mb-16 hover:shadow-lg">
+      <div className="w-full max-h-[400px] md:max-h-[300px]">
+        <img
+          src={img}
+          alt={name}
+          className="w-full rounded-t-md max-h-[400px] md:max-h-[300px]"
+        />
+      </div>
+      <div className="my-2 text-lg font-extrabold">
         <span className="text-[#a62817] capitalize">{name}</span>
         <span className="text-[#d75b3f] float-right">{price} rsd</span>
       </div>
-      <div className="">
-        <p>{desc}</p>
+      <div>
+        <p className="text-xl text-slate-800 tracking-wide mb-4 text-justify">
+          {desc}
+        </p>
       </div>
       <Link to={`/menuitem/${id}`}>
         <button

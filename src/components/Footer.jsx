@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import logo from "../assets/images/logo-small.png";
 
 const Footer = () => {
   return (
@@ -8,6 +10,9 @@ const Footer = () => {
         <div className="w-full md:w-1/2 lg:w-1/4 mb-12 md:mb-8">
           <h4>Aigo Eat</h4>
           <div className="h-[4px] w-full md:w-11/12 max-w-[1200px] bg-yellow-100 bg-opacity-70 my-2"></div>
+          <div>
+            <img src={logo} className="w-16 h-16" />
+          </div>
         </div>
         <div className="w-full md:w-1/2 lg:w-1/4 mb-12 md:mb-8">
           <h4>About</h4>
@@ -36,7 +41,7 @@ const Footer = () => {
             </a>
             <br />
             <a href="" className="underline">
-              management@aigokoreanfood.rs
+              mgmt@aigokoreanfood.rs
             </a>
           </p>
         </div>
@@ -63,6 +68,24 @@ const Footer = () => {
 
       {/* copyright section */}
       <section className="max-w-[1200px] mx-auto text-center">
+        {/* social links */}
+        <ul className=" flex justify-center gap-4 text-[#ffffef] mt-8 mb-4">
+          <li>
+            <Link to="https://wwww.facebook.com" target="_blank">
+              <FaFacebook size="2.5rem" className="hover:fill-[#a62817]" />
+            </Link>
+          </li>
+          <li>
+            <Link to="https://wwww.twitter.com" target="_blank">
+              <FaTwitter size="2.5rem" className="hover:fill-[#a62817]" />
+            </Link>
+          </li>
+          <li>
+            <Link to="https://wwww.instagram.com" target="_blank">
+              <FaInstagram size="2.5rem" className="hover:fill-[#a62817]" />
+            </Link>
+          </li>
+        </ul>
         <h5 className="mr-1">
           &copy; {new Date().getFullYear()}
           <span className="ml-1">Aigo Eat</span>

@@ -6,14 +6,17 @@ import SingleMenuItem from "./pages/SingleMenuItem";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import ErrorPage from "./pages/ErrorPage";
+// import i18n from "./i18n";
+import { withNamespaces } from "react-i18next";
 
-// localizacija
-// slike
-// boje
-// naslovna
-// o nama
-// kontakt
-// single item
+// kontakt (reCaptcha/reAptcha)
+// cookie consent (videti sta je problem)
+// probaj da nadjes koje cookies koristi email.js
+// terms of use strana
+// lokalizacija do kraja
+// konsultacija za boje, slike, raspored, sta ostaje/otpada/dodaje se
+// lazy loading komponenata
+// lazy loading slika
 
 const router = createBrowserRouter([
   {
@@ -53,8 +56,8 @@ const router = createBrowserRouter([
   },
 ]);
 
-function App() {
+const App = () => {
   return <RouterProvider router={router} />;
-}
+};
 
-export default App;
+export default withNamespaces()(App);

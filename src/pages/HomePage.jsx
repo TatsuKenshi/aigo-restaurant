@@ -1,14 +1,17 @@
-// import Hero from "../components/Hero";
 import { useEffect } from "react";
 import usePageTitle from "../hooks/usePageTitle";
 import Intro from "../components/Intro";
 import MenuPreview from "../components/MenuPreview";
 import ContactSection from "../components/ContactSection";
 import AboutSection from "../components/AboutSection";
+import i18n from "../i18n";
+import { withNamespaces } from "react-i18next";
 
 const HomePage = () => {
+  // page title customization and localization
   const { changeTitle } = usePageTitle();
-  const language = "sr";
+  const language = i18n.language;
+  console.log(language);
 
   useEffect(() => {
     changeTitle({ language: language, enTitle: "Home", srTitle: "Početna" });
@@ -16,12 +19,6 @@ const HomePage = () => {
 
   return (
     <section>
-      {/* title div */}
-      <div className="text-center my-8">
-        <h1 className="text-[#a62817] text-3xl font-extrabold">Aigo Eat</h1>
-        <div className="h-1 w-48 bg-[#a62817] mx-auto mt-1"></div>
-      </div>
-
       <Intro />
       <MenuPreview />
       <ContactSection />
@@ -30,4 +27,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default withNamespaces()(HomePage);

@@ -2,16 +2,17 @@ import { NavLink } from "react-router-dom";
 // import { withTranslation } from "react-i18next";
 // import i18next from "i18next";
 import { FaTimes } from "react-icons/fa";
-// import eng from "../assets/eng.png";
-// import ser2 from "../assets/ser2.png";
 import { useNavigationContext } from "../context/NavigationContext";
-// import logoTransparentan from "../assets/logoTransparentan.jpg";
 import logo from "../assets/images/logo-small.png";
+import i18n from "../i18n";
+import { withNamespaces } from "react-i18next";
+import english from "../assets/images/english.png";
+import serbian from "../assets/images/serbian.png";
 
-const Sidebar = () => {
-  // const handleChange = (language) => {
-  //   i18next.changeLanguage(language);
-  // };
+const Sidebar = ({ t }) => {
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
 
   const {
     sidebarStatus,
@@ -23,7 +24,7 @@ const Sidebar = () => {
 
   return (
     <aside
-      className={`z-[100] h-full w-full text-white bg-[#d75b3f]  bg-opacity-90 fixed top-0 right-0 sm:w-10/12 md:w-8/12 lg:hidden ${
+      className={`z-[100] h-full w-full text-white bg-[#d75b3f]  bg-opacity-95 fixed top-0 right-0 sm:w-10/12 md:w-8/12 lg:hidden ${
         sidebarStatus === "hidden" ? "translate-x-full" : "translate-x-0"
       } ease-in-out duration-1000`}
     >
@@ -59,7 +60,9 @@ const Sidebar = () => {
             }}
           >
             {/* <FaTimes className={`fill-white h-8 w-8 ${rotateSidebarButton}`} /> */}
-            <FaTimes className={`fill-white h-8 w-8 ${rotateSidebarButton}`} />
+            <FaTimes
+              className={`fill-[#a62817] h-8 w-8 ${rotateSidebarButton}`}
+            />
           </button>
         </div>
       </section>
@@ -70,7 +73,9 @@ const Sidebar = () => {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              isActive ? "text-[#a62817] font-bold" : "hover:text-[#a62817]"
+              isActive
+                ? "text-[#a62817] font-bold"
+                : "hover:text-[#a62817]  font-bold"
             }
             onClick={() => {
               setSidebarStatus("hidden");
@@ -78,7 +83,7 @@ const Sidebar = () => {
               setRotateMenuButton("");
             }}
           >
-            <span className="text-xl font-bold">{"Home"}</span>
+            <span className="text-3xl font-bold">{t("Početna")}</span>
           </NavLink>
         </div>
 
@@ -86,7 +91,9 @@ const Sidebar = () => {
           <NavLink
             to="/menu"
             className={({ isActive }) =>
-              isActive ? "text-[#a62817] font-bold" : "hover:text-[#a62817]"
+              isActive
+                ? "text-[#a62817] font-bold"
+                : "hover:text-[#a62817]  font-bold"
             }
             onClick={() => {
               setSidebarStatus("hidden");
@@ -94,7 +101,7 @@ const Sidebar = () => {
               setRotateMenuButton("");
             }}
           >
-            <span className="text-xl font-bold">{"Menu"}</span>
+            <span className="text-3xl font-bold">{t("Meni")}</span>
           </NavLink>
         </div>
 
@@ -102,7 +109,9 @@ const Sidebar = () => {
           <NavLink
             to="/contact"
             className={({ isActive }) =>
-              isActive ? "text-[#a62817] font-bold" : "hover:text-[#a62817]"
+              isActive
+                ? "text-[#a62817] font-bold"
+                : "hover:text-[#a62817]  font-bold"
             }
             onClick={() => {
               setSidebarStatus("hidden");
@@ -110,7 +119,7 @@ const Sidebar = () => {
               setRotateMenuButton("");
             }}
           >
-            <span className="text-xl font-bold">{"Contact"}</span>
+            <span className="text-3xl font-bold">{t("Kontakt")}</span>
           </NavLink>
         </div>
 
@@ -118,7 +127,9 @@ const Sidebar = () => {
           <NavLink
             to="/about"
             className={({ isActive }) =>
-              isActive ? "text-[#a62817] font-bold" : "hover:text-[#a62817]"
+              isActive
+                ? "text-[#a62817] font-bold"
+                : "hover:text-[#a62817] font-bold"
             }
             onClick={() => {
               setSidebarStatus("hidden");
@@ -126,7 +137,7 @@ const Sidebar = () => {
               setRotateMenuButton("");
             }}
           >
-            <span className="text-xl font-bold">{"About"}</span>
+            <span className="text-3xl font-bold"> {t("O nama")}</span>
           </NavLink>
         </div>
       </section>
@@ -136,28 +147,28 @@ const Sidebar = () => {
         <div className="w-8 h-8 mr-6">
           <button
             onClick={() => {
-              // handleChange("en");
+              changeLanguage("en");
               setSidebarStatus("hidden");
               setRotateSidebarButton("animate-[spin_0.4s_1]");
               setRotateMenuButton("");
             }}
             className="rounded-full"
           >
-            <img src={logo} alt="" />
+            <img src={english} alt="" />
           </button>
         </div>
 
         <div className="w-8 h-8 ml-6">
           <button
             onClick={() => {
-              // handleChange("sr");
+              changeLanguage("sr");
               setSidebarStatus("hidden");
               setRotateSidebarButton("animate-[spin_0.4s_1]");
               setRotateMenuButton("");
             }}
             className="rounded-full"
           >
-            <img src={logo} alt="" />
+            <img src={serbian} alt="" />
           </button>
         </div>
       </section>
@@ -166,4 +177,4 @@ const Sidebar = () => {
 };
 
 // export default withTranslation()(Sidebar);
-export default Sidebar;
+export default withNamespaces()(Sidebar);

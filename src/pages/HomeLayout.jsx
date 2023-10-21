@@ -2,11 +2,21 @@ import { useState } from "react";
 import { Outlet, useNavigation } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import { menuItemsFull, menuItemsShort } from "../data";
+import {
+  menuItemsFull,
+  menuItemsShort,
+  sideDishes,
+  introImages,
+  menuPreview,
+  people,
+  story,
+} from "../data";
 import Footer from "../components/Footer";
 import Sidebar from "../components/Sidebar";
 import ScrollToTop from "../components/ScrollToTop";
 import ScrollReset from "../components/ScrollReset";
+// import i18n from "../i18n";
+import { withNamespaces } from "react-i18next";
 
 const HomeLayout = () => {
   const navigation = useNavigation();
@@ -31,6 +41,11 @@ const HomeLayout = () => {
                 setItem,
                 menuItemsFull,
                 menuItemsShort,
+                sideDishes,
+                introImages,
+                menuPreview,
+                people,
+                story,
                 sidebarStatus,
                 setSidebarStatus,
               }}
@@ -44,4 +59,4 @@ const HomeLayout = () => {
   );
 };
 
-export default HomeLayout;
+export default withNamespaces()(HomeLayout);
