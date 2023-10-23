@@ -16,7 +16,7 @@ import { withNamespaces } from "react-i18next";
 // lokalizacija do kraja
 // konsultacija za boje, slike, raspored, sta ostaje/otpada/dodaje se
 // lazy loading komponenata
-// lazy loading slika
+// lazy loading slika (svih)
 
 const router = createBrowserRouter([
   {
