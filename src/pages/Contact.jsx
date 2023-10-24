@@ -3,6 +3,8 @@ import usePageTitle from "../hooks/usePageTitle";
 import ContactForm from "../components/ContactForm";
 import i18n from "../i18n";
 import { withNamespaces } from "react-i18next";
+import Map from "../components/Map";
+import ContactSection from "../components/ContactSection";
 
 const Contact = () => {
   // page title customization and localization
@@ -18,7 +20,7 @@ const Contact = () => {
     <div className="px-8">
       {/* title div */}
       <div className="text-center my-8 max-w-[1200px] mx-auto">
-        <h1 className="text-[#a62817] text-3xl font-extrabold">
+        <h1 className="text-[#9e1918] text-3xl font-extrabold">
           Send us an email
         </h1>
         <div className="h-1 w-48 bg-[#a62817] mx-auto mt-1"></div>
@@ -33,6 +35,8 @@ const Contact = () => {
       </div>
 
       <ContactForm />
+      <Map />
+      <ContactSection />
     </div>
   );
 };

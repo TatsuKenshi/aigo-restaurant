@@ -5,8 +5,8 @@ const Intro = () => {
     <section className="px-8">
       {/* title div */}
       <div className="text-center my-8 max-w-[1200px] mx-auto">
-        <h1 className="text-[#a62817] text-3xl font-extrabold">Gallery</h1>
-        <div className="h-1 w-48 bg-[#a62817] mx-auto mt-1"></div>
+        <h1 className="text-[#9e1918] text-3xl font-extrabold">Gallery</h1>
+        <div className="h-1 w-48 bg-[#9e1918] mx-auto mt-1"></div>
         <p className="mt-4 text-justify">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
           adipisci totam explicabo beatae, doloremque repellendus. Eveniet

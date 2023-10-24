@@ -23,30 +23,31 @@ const SingleMenuItem = () => {
   }, [item?.imgs, myID.id, setItem, menuItemsFull, setBigImage]);
 
   return (
-    <div className="mx-8 my-16 flex flex-wrap justify-between lg:max-w-[1200px] lg:mx-auto lg:px-8">
-      <div className="flex flex-wrap w-full md:w-6/12 mb-4 md:mb-0 justify-between md:max-h-[400px]">
+    <div className="mx-8 my-16 grid md:grid-cols-2 lg:max-w-[1200px] lg:mx-auto lg:px-8">
+      <div className="">
         <img
           src={bigImage}
           alt={item.name}
-          className=" mb-5 w-full h-[350px] lg:h-[500px]"
+          className="w-full mb-2 sm:mb-4 h-[50vw] md:h-[35vw] lg:h-[350px]"
         />
-        {imagesObject &&
-          imagesObject.map((image, index) => {
-            return (
-              <div key={index} className="w-1/6 h-20">
+        <div className="flex justify-between">
+          {imagesObject &&
+            imagesObject.map((image, index) => {
+              return (
                 <button
+                  className="w-[18%] h-[12vw] md:h-[6vw] lg:h-[60px] overflow-hidden"
                   onClick={() => {
                     setBigImage(imagesObject[index]);
                   }}
                 >
-                  <img src={image} alt={image} className="w-40 h-20" />
+                  <img src={image} alt={image} className="w-full h-full" />
                 </button>
-              </div>
-            );
-          })}
+              );
+            })}
+        </div>
       </div>
 
-      <div className="w-full md:w-6/12 mt-2 md:mt-0 pl-8">
+      <div className="mt-2 md:mt-0 md:pl-8">
         <p className="text-[#a62817] text-xl capitalize font-bold mb-4 lg:text-2xl">
           {item?.name}
         </p>

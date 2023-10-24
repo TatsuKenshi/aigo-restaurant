@@ -59,9 +59,8 @@ const Sidebar = ({ t }) => {
               setRotateMenuButton("");
             }}
           >
-            {/* <FaTimes className={`fill-white h-8 w-8 ${rotateSidebarButton}`} /> */}
             <FaTimes
-              className={`fill-[#a62817] h-8 w-8 ${rotateSidebarButton}`}
+              className={`fill-[#9e1918] h-8 w-8 ${rotateSidebarButton}`}
             />
           </button>
         </div>
@@ -74,8 +73,8 @@ const Sidebar = ({ t }) => {
             to="/"
             className={({ isActive }) =>
               isActive
-                ? "text-[#a62817] font-bold"
-                : "hover:text-[#a62817]  font-bold"
+                ? "text-[#9e1918] font-bold"
+                : "hover:text-[#9e1918]  font-bold"
             }
             onClick={() => {
               setSidebarStatus("hidden");
@@ -92,8 +91,8 @@ const Sidebar = ({ t }) => {
             to="/menu"
             className={({ isActive }) =>
               isActive
-                ? "text-[#a62817] font-bold"
-                : "hover:text-[#a62817]  font-bold"
+                ? "text-[#9e1918] font-bold"
+                : "hover:text-[#9e1918]  font-bold"
             }
             onClick={() => {
               setSidebarStatus("hidden");
@@ -110,8 +109,8 @@ const Sidebar = ({ t }) => {
             to="/contact"
             className={({ isActive }) =>
               isActive
-                ? "text-[#a62817] font-bold"
-                : "hover:text-[#a62817]  font-bold"
+                ? "text-[#9e1918] font-bold"
+                : "hover:text-[#9e1918]  font-bold"
             }
             onClick={() => {
               setSidebarStatus("hidden");
@@ -128,8 +127,8 @@ const Sidebar = ({ t }) => {
             to="/about"
             className={({ isActive }) =>
               isActive
-                ? "text-[#a62817] font-bold"
-                : "hover:text-[#a62817] font-bold"
+                ? "text-[#9e1918] font-bold"
+                : "hover:text-[#9e1918] font-bold"
             }
             onClick={() => {
               setSidebarStatus("hidden");
@@ -176,5 +175,4 @@ const Sidebar = ({ t }) => {
   );
 };
 
-// export default withTranslation()(Sidebar);
 export default withNamespaces()(Sidebar);

@@ -29,7 +29,7 @@ const SlickCarousel = () => {
               <img
                 src={image}
                 alt={name}
-                className="w-full h-full max-h-[600px]"
+                className="w-full h-full max-h-[650px]"
               />
             </article>
           );

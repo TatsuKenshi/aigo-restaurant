@@ -1,11 +1,11 @@
 const SkillsCard = ({ name, job, image, text }) => {
   return (
-    <article className="bg-white">
-      <div className="w-full h-[200px] sm:h-[300px] md:h-[250px] lg:h-[300px]">
+    <article className="bg-white hover:shadow-lg">
+      <div className="w-full h-[45vw] sm:h-[50vw] md:h-[30vw] lg:h-[350px]">
         <img
           src={image}
           alt={name}
-          className="w-full h-[200px] sm:h-[300px] md:h-[250px] lg:h-[300px]"
+          className="w-full h-[45vw] sm:h-[50vw] md:h-[30vw] lg:h-[350px]"
         />
       </div>
       <div className="p-2">
@@ -16,9 +16,6 @@ const SkillsCard = ({ name, job, image, text }) => {
           {job}
         </p>
         <p className="my-2 text-md text-slate-800 h-content min-h-32 text-justify">
-          {text}
-        </p>
-        <p className="text-md text-slate-800 h-content min-h-32 text-justify">
           {text}
         </p>
       </div>

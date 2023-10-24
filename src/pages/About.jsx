@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import usePageTitle from "../hooks/usePageTitle";
 import Team from "../components/Team";
-import Map from "../components/Map";
 import Story from "../components/Story";
 import i18n from "../i18n";
 import { withNamespaces } from "react-i18next";
@@ -18,7 +17,6 @@ const About = () => {
 
   return (
     <div>
-      <Map />
       <Story />
       <Team />
     </div>

@@ -25,10 +25,10 @@ const Story = () => {
     <section className="py-8 px-8 ">
       {/* title div */}
       <div className="text-center max-w-[1200px] mx-auto">
-        <h1 className="text-[#a62817] text-3xl font-extrabold">
+        <h1 className="text-[#9e1918] text-3xl font-extrabold">
           Aigo Story so far...
         </h1>
-        <div className="h-1 w-48 bg-[#a62817] mx-auto mt-1"></div>
+        <div className="h-1 w-48 bg-[#9e1918] mx-auto mt-1"></div>
         <p className="mt-4 text-justify">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
           adipisci totam explicabo beatae, doloremque repellendus. Eveniet
@@ -39,7 +39,7 @@ const Story = () => {
         </p>
       </div>
 
-      <article className="mt-8 max-w-[900px] mx-auto bg-white">
+      <article className="mt-8 max-w-[900px] mx-auto hover:shadow-lg">
         <div className="w-full mb-4 h-[250px] sm:h-[450px]">
           <img src={image} alt={name} className="w-full h-full" />
         </div>
@@ -51,7 +51,7 @@ const Story = () => {
             <FaChevronRight size="3rem" className="fill-[#a62817]" />
           </button>
         </div>
-        <div className="py-4 px-2">
+        <div className="py-4 px-2 min-h-[265px]">
           <p className="mb-4 text-[#a62817] capitalize font-bold text-2xl">
             {name}
           </p>

@@ -4,8 +4,12 @@ const MenuPreviewCard = ({ img, name, price, desc }) => {
   const navigate = useNavigate();
 
   return (
-    <article className="bg-[#ffffef] rounded-t-lg hover:shadow:3xl duration-300">
-      <img src={img} alt={name} className="w-full rounded-t-lg h-64" />
+    <article className="bg-[#ffffef] rounded-t-lg hover:shadow-lg">
+      <img
+        src={img}
+        alt={name}
+        className="w-full rounded-t-lg h-[60vw] sm:h-96 md:h-40 lg:h-52"
+      />
       <div className="py-4 px-2">
         <p className="text-[#a62817] capitalize mb-2 font-bold">{name}</p>
         <p className="text-md text-slate-800 tracking-wide mb-4 text-justify">

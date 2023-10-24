@@ -291,28 +291,63 @@ export const menuPreview = [
 export const people = [
   {
     id: 1,
-    name: "susan smith",
+    name: "Nina Novkovic Kakani",
     job: "chief executive officer",
     image: employee1,
-    text: "I'm baby meggings twee health goth +1. Bicycle rights tumeric chartreuse before they sold out chambray pop-up. Shaman humblebrag pickled coloring book salvia hoodie, cold-pressed four dollar toast everyday carry",
+    text: `With cultural expertise,
+    language skills, and
+    enthusiasm for Korean food,
+    Nina would be able to guide
+    the restaurant's operations,
+    develop an authentic menu,
+    and provide excellent
+    customer service to guests,
+    ultimately contributing to the
+    success of the business.`,
   },
   {
     id: 2,
-    name: "mark johnson",
+    name: "Goran Novkovic",
     job: "chief financial officer",
     image: employee2,
-    text: "Helvetica artisan kinfolk thundercats lumbersexual blue bottle. Disrupt glossier gastropub deep v vice franzen hell of brooklyn twee enamel pin fashion axe.photo booth jean shorts artisan narwhal.",
+    text: `With their experience as an
+    effective project leader and
+    their ability to promote best
+    practices, they would be able to
+    help the restaurant grow and
+    succeed financially. Their
+    passion for Korean food and
+    enjoyment of it in different
+    places would also give them a
+    unique perspective on the
+    restaurant industry, helping
+    them make informed financial
+    decisions that support the
+    restaurant's mission and goals.`,
   },
   {
     id: 3,
-    name: "megan jones",
+    name: "Milica Trickovic",
     job: "chief marketing officer",
     image: employee3,
-    text: "Sriracha literally flexitarian irony, vape marfa unicorn. Glossier tattooed 8-bit, fixie waistcoat offal activated charcoal slow-carb marfa hell of pabst raclette post-ironic jianbing swag.",
+    text: `With their expertise in Korean
+    culture and language, they
+    would be able to develop
+    effective marketing strategies
+    that resonate with the target
+    audience, communicate the
+    restaurant's mission and
+    vision, and create brand
+    awareness. Their passion for
+    promoting the Korean
+    experience would also be
+    invaluable in driving customer
+    engagement and building a
+    loyal customer base.`,
   },
   {
     id: 4,
-    name: "bill anderson",
+    name: "Vladimir Trickovic",
     job: "main chef",
     image: employee4,
     text: "Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion axe cray stumptown venmo actually seitan. VHS farm-to-table schlitz, edison bulb pop-up 3 wolf moon tote bag street art shabby chic. ",

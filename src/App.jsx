@@ -11,12 +11,15 @@ import { withNamespaces } from "react-i18next";
 
 // kontakt (reCaptcha/reAptcha)
 // cookie consent (videti sta je problem)
-// probaj da nadjes koje cookies koristi email.js
+// nauci nodemailer
 // terms of use strana
 // lokalizacija do kraja
 // konsultacija za boje, slike, raspored, sta ostaje/otpada/dodaje se
 // lazy loading komponenata
 // lazy loading slika (svih)
+// What's in store sekcija
+// // // mission & vision u gornjem redu
+// // // future plans & milestones u drugom
 
 const router = createBrowserRouter([
   {

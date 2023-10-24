@@ -18,12 +18,14 @@ const Footer = () => {
           <h4>About</h4>
           <div className="h-[4px] w-full md:w-11/12 max-w-[1200px] bg-yellow-100 bg-opacity-70 my-2"></div>
           <p>
-            Company Seat <br /> CompanyAddress
+            Company Seat <br /> 1625 Washington Avenue
           </p>
           <p>
             Hours
             <br />
-            HoursDisplay
+            Mon-Fri: 10-22
+            <br />
+            Sat: 12-20
           </p>
         </div>
         <div className="w-full md:w-1/2 lg:w-1/4 mb-12 md:mb-8">
@@ -48,7 +50,7 @@ const Footer = () => {
 
         {/* links section */}
         <div className="w-full md:w-1/2 lg:w-1/4 mb-12 md:mb-8">
-          <h4>{"FooterLinks"}</h4>
+          <h4>Links</h4>
           <div className="h-[4px] w-full md:w-11/12 max-w-[1200px] bg-yellow-100 bg-opacity-70 my-2"></div>
           <p>
             <Link to="/">{"Home"}</Link>
@@ -72,17 +74,17 @@ const Footer = () => {
         <ul className=" flex justify-center gap-4 text-[#ffffef] mt-8 mb-4">
           <li>
             <Link to="https://wwww.facebook.com" target="_blank">
-              <FaFacebook size="2.5rem" className="hover:fill-[#a62817]" />
+              <FaFacebook size="2.5rem" className="hover:fill-[#9e1918]" />
             </Link>
           </li>
           <li>
             <Link to="https://wwww.twitter.com" target="_blank">
-              <FaTwitter size="2.5rem" className="hover:fill-[#a62817]" />
+              <FaTwitter size="2.5rem" className="hover:fill-[#9e1918]" />
             </Link>
           </li>
           <li>
             <Link to="https://wwww.instagram.com" target="_blank">
-              <FaInstagram size="2.5rem" className="hover:fill-[#a62817]" />
+              <FaInstagram size="2.5rem" className="hover:fill-[#9e1918]" />
             </Link>
           </li>
         </ul>

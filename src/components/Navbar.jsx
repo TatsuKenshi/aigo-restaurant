@@ -1,7 +1,7 @@
 import { NavLink, Link } from "react-router-dom";
 import { FaFacebook, FaTwitter, FaInstagram, FaBars } from "react-icons/fa";
 // import logo from "../assets/images/logo-small.png";
-import logoBig from "../assets/images/logo-big.png";
+import logoBig from "../assets/images/logo-big-4.png";
 import { useNavigationContext } from "../context/NavigationContext";
 import i18n from "../i18n";
 import { withNamespaces } from "react-i18next";
@@ -24,22 +24,11 @@ const Navbar = ({ t }) => {
   return (
     <nav className="px-8 h-24 bg-[#d75b3f] text-white drop-shadow-2xl">
       <section className="flex justify-between max-w-[1200px] mx-auto">
-        {/* logo */}
-        {/* <div className="">
+        <span className="h-24">
           <NavLink to="/">
-            <span className="h-24 flex items-center">
-              <img src={logo} alt="logo" className="w-16" />
-            </span>
+            <img src={logoBig} alt="logo" className="w-20 mt-8" />
           </NavLink>
-        </div> */}
-
-        <div className="">
-          <NavLink to="/">
-            <span className="h-24 flex items-center">
-              <img src={logoBig} alt="logo" className="w-16 mt-40" />
-            </span>
-          </NavLink>
-        </div>
+        </span>
 
         {/* navigation links */}
         <div className="hidden lg:block w-[400px] justify-between">
@@ -49,8 +38,8 @@ const Navbar = ({ t }) => {
                 to="/"
                 className={({ isActive }) =>
                   isActive
-                    ? "text-[#a62817] font-bold"
-                    : "hover:text-[#a62817]  font-bold"
+                    ? "text-[#9e1918] font-bold"
+                    : "hover:text-[#9e1918]  font-bold"
                 }
               >
                 {t("Početna")}
@@ -61,8 +50,8 @@ const Navbar = ({ t }) => {
                 to="/menu"
                 className={({ isActive }) =>
                   isActive
-                    ? "text-[#a62817] font-bold"
-                    : "hover:text-[#a62817]  font-bold"
+                    ? "text-[#9e1918] font-bold"
+                    : "hover:text-[#9e1918]  font-bold"
                 }
               >
                 {t("Meni")}
@@ -73,8 +62,8 @@ const Navbar = ({ t }) => {
                 to="/contact"
                 className={({ isActive }) =>
                   isActive
-                    ? "text-[#a62817] font-bold"
-                    : "hover:text-[#a62817]  font-bold"
+                    ? "text-[#9e1918] font-bold"
+                    : "hover:text-[#9e1918]  font-bold"
                 }
               >
                 {t("Kontakt")}
@@ -85,8 +74,8 @@ const Navbar = ({ t }) => {
                 to="/about"
                 className={({ isActive }) =>
                   isActive
-                    ? "text-[#a62817] font-bold"
-                    : "hover:text-[#a62817]  font-bold"
+                    ? "text-[#9e1918] font-bold"
+                    : "hover:text-[#9e1918]  font-bold"
                 }
               >
                 {t("O nama")}
@@ -111,17 +100,17 @@ const Navbar = ({ t }) => {
           <ul className="h-24 items-center gap-4 hidden lg:flex text-[#ffffef]">
             <li>
               <Link to="https://wwww.facebook.com" target="_blank">
-                <FaFacebook size="1.5rem" className="hover:fill-[#a62817]" />
+                <FaFacebook size="1.5rem" className="hover:fill-[#9e1918]" />
               </Link>
             </li>
             <li>
               <Link to="https://wwww.twitter.com" target="_blank">
-                <FaTwitter size="1.5rem" className="hover:fill-[#a62817]" />
+                <FaTwitter size="1.5rem" className="hover:fill-[#9e1918]" />
               </Link>
             </li>
             <li>
               <Link to="https://wwww.instagram.com" target="_blank">
-                <FaInstagram size="1.5rem" className="hover:fill-[#a62817]" />
+                <FaInstagram size="1.5rem" className="hover:fill-[#9e1918]" />
               </Link>
             </li>
           </ul>
@@ -136,7 +125,7 @@ const Navbar = ({ t }) => {
               setRotateSidebarButton("");
             }}
           >
-            <FaBars className={`fill-[#a62817] h-8 w-8 ${rotateMenuButton}`} />
+            <FaBars className={`fill-[#9e1918] h-8 w-8 ${rotateMenuButton}`} />
           </button>
         </div>
       </section>

@@ -21,8 +21,8 @@ const HomePage = () => {
     <section>
       <Intro />
       <MenuPreview />
-      <ContactSection />
-      <AboutSection />
+      {/* <ContactSection />
+      <AboutSection /> */}
     </section>
   );
 };
