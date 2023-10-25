@@ -22,7 +22,7 @@ const MenuPreview = () => {
         </p>
       </div>
 
-      <div className="max-w-[1200px] mx-auto grid md:grid-cols-3 gap-8">
+      <div className="max-w-[1200px] mx-auto grid md:grid-cols-3 gap-4">
         {menuPreview.map((menuItem) => {
           return <MenuPreviewCard key={menuItem.id} {...menuItem} />;
         })}

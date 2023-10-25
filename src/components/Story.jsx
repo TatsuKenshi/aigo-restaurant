@@ -22,7 +22,7 @@ const Story = () => {
   };
 
   return (
-    <section className="py-8 px-8 ">
+    <section className="p-8">
       {/* title div */}
       <div className="text-center max-w-[1200px] mx-auto">
         <h1 className="text-[#9e1918] text-3xl font-extrabold">
@@ -51,17 +51,11 @@ const Story = () => {
             <FaChevronRight size="3rem" className="fill-[#a62817]" />
           </button>
         </div>
-        <div className="py-4 px-2 min-h-[265px]">
-          <p className="mb-4 text-[#a62817] capitalize font-bold text-2xl">
+        <div className="py-4 px-2 min-h-[300px] sm:min-h-[250px] md:min-h-[200px]">
+          <p className="w-full mb-4 text-[#a62817] capitalize font-bold text-2xl">
             {name}
           </p>
-          <p className="text-md text-slate-800 text-justify">{text}</p>
-          {text2 && (
-            <p className="text-md mt-4 text-slate-800 text-justify">{text2}</p>
-          )}
-          {text3 && (
-            <p className="text-md mt-4 text-slate-800 text-justify">{text2}</p>
-          )}
+          <p className="w-full text-md text-slate-800 text-justify">{text}</p>
         </div>
       </article>
     </section>

@@ -17,7 +17,7 @@ const Intro = () => {
         </p>
       </div>
 
-      <div className="text-center my-8 max-w-[1200px] mx-auto">
+      <div className="text-center mt-8 max-w-[1200px] mx-auto">
         <SlickCarousel />
       </div>
     </section>

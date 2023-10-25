@@ -11,7 +11,7 @@ const Footer = () => {
           <h4>Aigo Eat</h4>
           <div className="h-[4px] w-full md:w-11/12 max-w-[1200px] bg-yellow-100 bg-opacity-70 my-2"></div>
           <div>
-            <img src={logo} className="w-16 h-16" />
+            <img src={logo} alt="logo" className="w-16 h-16" />
           </div>
         </div>
         <div className="w-full md:w-1/2 lg:w-1/4 mb-12 md:mb-8">

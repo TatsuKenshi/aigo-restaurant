@@ -33,8 +33,7 @@ const Menu = () => {
         </p>
       </div>
 
-      {/* <div className="flex flex-wrap justify-between max-w-[1200px] mx-auto"> */}
-      <div className="grid gap-8 max-w-[1200px] md:grid-cols-2 mx-auto">
+      <div className="grid gap-4 lg:gap-8 max-w-[1200px] md:grid-cols-2 mx-auto">
         {menuItemsShort.map((item) => {
           return <MenuItemCard key={item.id} {...item} />;
         })}
@@ -54,7 +53,7 @@ const Menu = () => {
         </p>
       </div>
 
-      <div className="flex flex-wrap justify-between max-w-[1200px] mx-auto mb-16">
+      <div className="max-w-[1200px] mx-auto mb-8">
         {sideDishes.map((item) => {
           return <SideDishCard key={item.id} {...item} />;
         })}

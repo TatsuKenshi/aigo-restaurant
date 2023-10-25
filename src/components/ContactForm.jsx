@@ -48,7 +48,7 @@ const ContactForm = () => {
   // };
 
   return (
-    <section className="max-w-[1200px] mx-auto my-4">
+    <section className="max-w-[900px] mx-auto my-4">
       <form
         ref={form}
         onSubmit={(e) => {
@@ -69,7 +69,7 @@ const ContactForm = () => {
         }}
       >
         {/* name input section */}
-        <div className="mb-4 w-full sm:w-10/12 md:w-8/12 mx-auto">
+        <div className="mb-4 w-full mx-auto">
           <div>
             <label
               htmlFor="user_name"
@@ -107,7 +107,7 @@ const ContactForm = () => {
         </div>
 
         {/* email input section */}
-        <div className="mb-4 w-full sm:w-10/12 md:w-8/12 mx-auto">
+        <div className="mb-4 w-full mx-auto">
           <div>
             <label
               htmlFor="user_email"
@@ -147,7 +147,7 @@ const ContactForm = () => {
         </div>
 
         {/* message input section */}
-        <div className="mb-4 w-full sm:w-10/12 md:w-8/12 mx-auto">
+        <div className="mb-4 w-full mx-auto">
           <div>
             <label
               htmlFor="message"
@@ -187,10 +187,10 @@ const ContactForm = () => {
         </div>
 
         {/* submit button section */}
-        <div className="mb-4 w-full sm:w-10/12 md:w-8/12 mx-auto">
+        <div className="mb-4 w-full mx-auto lg:text-center">
           <button
             type="submit"
-            className="border-4 border-[#a62817] text-[#a62817] font-bold rounded-lg px-2 text-xl w-full lg:w-min"
+            className="border-4 border-[#a62817] text-[#a62817] font-bold rounded-lg px-2 py-1 text-xl w-full lg:w-64"
             disabled={!isValid}
           >
             {language === "en" ? "Send" : "Pošalji"}

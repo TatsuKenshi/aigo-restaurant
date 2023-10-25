@@ -4,7 +4,7 @@ import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 const ContactSection = () => {
   const navigate = useNavigate();
   return (
-    <section className="py-8 px-8 bg-[#ffffef]">
+    <section className="py-8 bg-[#ffffef]">
       {/* title div */}
       <div className="text-center max-w-[1200px] mx-auto">
         <h1 className="text-[#9e1918] text-3xl font-extrabold">
