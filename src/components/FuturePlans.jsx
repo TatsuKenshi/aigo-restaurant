@@ -85,37 +85,51 @@ const FuturePlans = () => {
         </h1>
         <div className="h-1 w-48 bg-[#9e1918] mx-auto mt-1"></div>
 
-        <div className="p-2">
-          <p className="mt-4 text-[#a62817] font-bold text-xl">
-            Introduction of monthly specials
-          </p>
-          <p className="text-md text-slate-800 h-content min-h-32 text-justify">
-            Create monthly specials, starting in the first quarter of 2024.
-          </p>
-          <p className="text-[#a62817] font-bold text-xl">
-            Create a loyalty program
-          </p>
-          <p className="text-md text-slate-800 h-content min-h-32 text-justify">
-            The program aims to enhance the dining experience, encourage repeat
-            visits, and foster a sense of belonging within the Aigo community
-          </p>
-          <p className="text-[#a62817] font-bold text-xl">
-            Open a physical store
-          </p>
-          <p className="text-md text-slate-800 h-content min-h-32 text-justify">
-            We want to open up our restaurant and expand our business
-          </p>
-          <p className="text-[#a62817] font-bold text-xl">
-            Community Engagement
-          </p>
-          <p className="text-md text-slate-800 h-content min-h-32 text-justify">
-            Support local charities, host cultural workshops.
-          </p>
-          <p className="text-[#a62817] font-bold text-xl">Impact</p>
-          <p className="text-md text-slate-800 h-content min-h-32 text-justify">
-            Elevate perception of Korean cuisine, promote sustainability in
-            dining.
-          </p>
+        <div className="p-2 grid md:grid-cols-2 gap-8">
+          <div>
+            <p className="mt-4 md:mt-0 text-[#a62817] font-bold text-xl">
+              Introduction of monthly specials
+            </p>
+            <p className="text-md text-slate-800 text-justify">
+              Create monthly specials, starting in the first quarter of 2024.
+              Create monthly specials, starting in the first quarter of 2024.
+              Create monthly specials, starting in the first quarter of 2024.
+            </p>
+          </div>
+          <div>
+            <p className="text-[#a62817] font-bold text-xl">
+              Create a loyalty program
+            </p>
+            <p className="text-md text-slate-800 text-justify">
+              The program aims to enhance the dining experience, encourage
+              repeat visits, and foster a sense of belonging within the Aigo
+              community
+            </p>
+          </div>
+          <div>
+            <p className="text-[#a62817] font-bold text-xl">
+              Open a physical store
+            </p>
+            <p className="text-md text-slate-800 text-justify">
+              We want to open up our restaurant and expand our business
+            </p>
+          </div>
+          <div>
+            <p className="text-[#a62817] font-bold text-xl">
+              Community Engagement
+            </p>
+            <p className="text-md text-slate-800 text-justify">
+              Support local charities, host cultural workshops. Support local
+              charities, host cultural workshops.
+            </p>
+          </div>
+          <div>
+            <p className="text-[#a62817] font-bold text-xl">Impact</p>
+            <p className="text-md text-slate-800 text-justify">
+              Elevate perception of Korean cuisine, promote sustainability in
+              dining.
+            </p>
+          </div>
         </div>
       </div>
     </section>
