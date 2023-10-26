@@ -1,11 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import usePageTitle from "../hooks/usePageTitle";
-import Intro from "../components/Intro";
-import MenuPreview from "../components/MenuPreview";
-import ContactSection from "../components/ContactSection";
-import AboutSection from "../components/AboutSection";
 import i18n from "../i18n";
 import { withNamespaces } from "react-i18next";
+import SectionLoading from "../components/SectionLoading";
+
+const Intro = lazy(() => import("../components/Intro"));
+const MenuPreview = lazy(() => import("../components/MenuPreview"));
 
 const HomePage = () => {
   // page title customization and localization
@@ -19,8 +19,12 @@ const HomePage = () => {
 
   return (
     <section>
-      <Intro />
-      <MenuPreview />
+      <Suspense fallback={<SectionLoading />}>
+        <Intro />
+      </Suspense>
+      <Suspense fallback={<SectionLoading />}>
+        <MenuPreview />
+      </Suspense>
     </section>
   );
 };

@@ -1,7 +1,5 @@
-import { useState } from "react";
+import { useState, lazy } from "react";
 import { Outlet, useNavigation } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
 import {
   menuItemsFull,
   menuItemsShort,
@@ -11,12 +9,15 @@ import {
   people,
   story,
 } from "../data";
-import Footer from "../components/Footer";
-import Sidebar from "../components/Sidebar";
-import ScrollToTop from "../components/ScrollToTop";
 import ScrollReset from "../components/ScrollReset";
 // import i18n from "../i18n";
 import { withNamespaces } from "react-i18next";
+
+const Navbar = lazy(() => import("../components/Navbar"));
+const Hero = lazy(() => import("../components/Hero"));
+const Footer = lazy(() => import("../components/Footer"));
+const Sidebar = lazy(() => import("../components/Sidebar"));
+const ScrollToTop = lazy(() => import("../components/ScrollToTop"));
 
 const HomeLayout = () => {
   const navigation = useNavigation();

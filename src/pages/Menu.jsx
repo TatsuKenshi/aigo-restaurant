@@ -1,10 +1,12 @@
-import { useEffect } from "react";
-import MenuItemCard from "../components/MenuItemCard";
+import { useEffect, lazy, Suspense } from "react";
 import { useOutletContext } from "react-router-dom";
 import usePageTitle from "../hooks/usePageTitle";
-import SideDishCard from "../components/SideDishCard";
 import i18n from "../i18n";
+import SectionLoading from "../components/SectionLoading";
 import { withNamespaces } from "react-i18next";
+
+const MenuItemCard = lazy(() => import("../components/MenuItemCard"));
+const SideDishCard = lazy(() => import("../components/SideDishCard"));
 
 const Menu = () => {
   const { menuItemsShort, sideDishes } = useOutletContext();
@@ -35,7 +37,11 @@ const Menu = () => {
 
       <div className="grid gap-4 lg:gap-8 max-w-[1200px] md:grid-cols-2 mx-auto">
         {menuItemsShort.map((item) => {
-          return <MenuItemCard key={item.id} {...item} />;
+          return (
+            <Suspense fallback={<SectionLoading />}>
+              <MenuItemCard key={item.id} {...item} />
+            </Suspense>
+          );
         })}
       </div>
 
@@ -55,7 +61,11 @@ const Menu = () => {
 
       <div className="max-w-[1200px] mx-auto mb-8">
         {sideDishes.map((item) => {
-          return <SideDishCard key={item.id} {...item} />;
+          return (
+            <Suspense fallback={<SectionLoading />}>
+              <SideDishCard key={item.id} {...item} />
+            </Suspense>
+          );
         })}
       </div>
     </section>

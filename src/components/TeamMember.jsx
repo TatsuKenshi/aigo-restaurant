@@ -1,12 +1,21 @@
-const SkillsCard = ({ name, job, image, text }) => {
+import ProgressiveImage from "react-progressive-graceful-image";
+import heroSmall from "../assets/images/hero-test-small.jpg";
+
+const TeamMember = ({ name, job, image, text }) => {
   return (
     <article className="bg-white hover:shadow-lg">
       <div className="w-full h-[45vw] sm:h-[50vw] md:h-[30vw] lg:h-[350px]">
-        <img
-          src={image}
-          alt={name}
-          className="w-full h-[45vw] sm:h-[50vw] md:h-[30vw] lg:h-[350px]"
-        />
+        <ProgressiveImage src={image} placeholder={heroSmall}>
+          {(src, loading) => (
+            <img
+              src={src}
+              alt={name}
+              className={`image${
+                loading ? " loading" : " loaded"
+              } w-full h-[45vw] sm:h-[50vw] md:h-[30vw] lg:h-[350px]`}
+            />
+          )}
+        </ProgressiveImage>
       </div>
       <div className="p-2">
         <p className="mt-4 text-[#a62817] capitalize font-bold text-2xl">
@@ -23,4 +32,4 @@ const SkillsCard = ({ name, job, image, text }) => {
   );
 };
 
-export default SkillsCard;
+export default TeamMember;

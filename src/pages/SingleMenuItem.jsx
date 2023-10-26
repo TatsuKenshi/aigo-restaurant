@@ -1,16 +1,13 @@
 import { useState, useEffect } from "react";
 import { useOutletContext, useParams, useNavigate } from "react-router-dom";
+import ProgressiveImage from "react-progressive-graceful-image";
+import heroSmall from "../assets/images/hero-test-small.jpg";
 
 const SingleMenuItem = () => {
   const { item, setItem, menuItemsFull, sideDishes } = useOutletContext();
   const [bigImage, setBigImage] = useState();
   const myID = useParams();
   const navigate = useNavigate();
-
-  // const itemIngredients = Object.keys(item)
-  //   .filter((key) => key.startsWith("ingredients"))
-  //   .map((key) => item[key]);
-  // const ingredientsObject = itemIngredients?.[0];
 
   const itemImages = Object.keys(item)
     .filter((key) => key.startsWith("imgs"))
@@ -25,11 +22,17 @@ const SingleMenuItem = () => {
   return (
     <div className="mx-8 my-16 grid md:grid-cols-2 lg:max-w-[1200px] lg:mx-auto lg:px-8">
       <div className="">
-        <img
-          src={bigImage}
-          alt={item.name}
-          className="w-full mb-2 sm:mb-4 h-[50vw] md:h-[35vw] lg:h-[350px]"
-        />
+        <ProgressiveImage src={bigImage} placeholder={heroSmall}>
+          {(src, loading) => (
+            <img
+              src={src}
+              alt={item.name}
+              className={`image${
+                loading ? " loading" : " loaded"
+              } w-full mb-2 sm:mb-4 h-[50vw] md:h-[35vw] lg:h-[350px]`}
+            />
+          )}
+        </ProgressiveImage>
         <div className="flex justify-between">
           {imagesObject &&
             imagesObject.map((image, index) => {

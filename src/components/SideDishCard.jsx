@@ -1,12 +1,21 @@
+import ProgressiveImage from "react-progressive-graceful-image";
+import heroSmall from "../assets/images/hero-test-small.jpg";
+
 const SideDishCard = ({ img, name, price, desc }) => {
   return (
     <article className="flex justify-between flex-wrap py-4 hover:shadow-lg">
       <div className="w-full md:w-4/12 max-h-[60vw] sm:max-h-[400px] md:max-h-[200px]">
-        <img
-          src={img}
-          alt={name}
-          className="w-full h-[60vw] sm:h-[400px] md:h-[200px]"
-        />
+        <ProgressiveImage src={img} placeholder={heroSmall}>
+          {(src, loading) => (
+            <img
+              src={src}
+              alt={name}
+              className={`image${
+                loading ? " loading" : " loaded"
+              } w-full h-[60vw] sm:h-[400px] md:h-[200px]`}
+            />
+          )}
+        </ProgressiveImage>
       </div>
       <div className="my-4 md:w-8/12 md:my-0 md:pl-4 md:max-h-[200px] relative">
         <p className="text-[#a62817] capitalize text-lg font-extrabold">

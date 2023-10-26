@@ -1,10 +1,15 @@
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import usePageTitle from "../hooks/usePageTitle";
-import ContactForm from "../components/ContactForm";
 import i18n from "../i18n";
 import { withNamespaces } from "react-i18next";
-import Map from "../components/Map";
-import ContactSection from "../components/ContactSection";
+// import ContactForm from "../components/ContactForm";
+// import Map from "../components/Map";
+// import ContactSection from "../components/ContactSection";
+import SectionLoading from "../components/SectionLoading";
+
+const ContactForm = lazy(() => import("../components/ContactForm"));
+const Map = lazy(() => import("../components/Map"));
+const ContactSection = lazy(() => import("../components/ContactSection"));
 
 const Contact = () => {
   // page title customization and localization
@@ -34,9 +39,15 @@ const Contact = () => {
         </p>
       </div>
 
-      <ContactForm />
-      <Map />
-      <ContactSection />
+      <Suspense fallback={<SectionLoading />}>
+        <ContactForm />
+      </Suspense>
+      <Suspense fallback={<SectionLoading />}>
+        <Map />
+      </Suspense>
+      <Suspense fallback={<SectionLoading />}>
+        <ContactSection />
+      </Suspense>
     </div>
   );
 };

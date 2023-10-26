@@ -1,5 +1,7 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import ProgressiveImage from "react-progressive-graceful-image";
+import heroSmall from "../assets/images/hero-test-small.jpg";
 import { useOutletContext } from "react-router-dom";
 
 import Slider from "react-slick";
@@ -26,11 +28,17 @@ const SlickCarousel = () => {
           const { id, image, name } = introImage;
           return (
             <article key={id}>
-              <img
-                src={image}
-                alt={name}
-                className="w-full h-full max-h-[650px]"
-              />
+              <ProgressiveImage src={image} placeholder={heroSmall}>
+                {(src, loading) => (
+                  <img
+                    src={src}
+                    alt={name}
+                    className={`image${
+                      loading ? " loading" : " loaded"
+                    } w-full h-full max-h-[650px]`}
+                  />
+                )}
+              </ProgressiveImage>
             </article>
           );
         })}

@@ -1,5 +1,6 @@
-import MenuPreviewCard from "./MenuPreviewCard";
 import { useOutletContext } from "react-router-dom";
+import Loading from "./Loading";
+import MenuPreviewCard from "./MenuPreviewCard";
 
 const MenuPreview = () => {
   const { menuPreview } = useOutletContext();

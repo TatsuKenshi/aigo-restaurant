@@ -1,21 +1,20 @@
+import { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomeLayout from "./pages/HomeLayout";
-import HomePage from "./pages/HomePage";
-import Menu from "./pages/Menu";
-import SingleMenuItem from "./pages/SingleMenuItem";
-import Contact from "./pages/Contact";
-import About from "./pages/About";
-import ErrorPage from "./pages/ErrorPage";
-// import i18n from "./i18n";
-import { withNamespaces } from "react-i18next";
+import Loading from "./components/Loading";
+
+const HomeLayout = lazy(() => import("./pages/HomeLayout"));
+const HomePage = lazy(() => import("./pages/HomePage"));
+const Menu = lazy(() => import("./pages/Menu"));
+const SingleMenuItem = lazy(() => import("./pages/SingleMenuItem"));
+const Contact = lazy(() => import("./pages/Contact"));
+const About = lazy(() => import("./pages/About"));
+const ErrorPage = lazy(() => import("./pages/ErrorPage"));
 
 // kontakt (reCaptcha/reAptcha)
 // cookie consent (videti sta je problem)
 // nauci nodemailer
 // terms of use strana
 // lokalizacija do kraja
-// konsultacija za boje, slike, raspored, sta ostaje/otpada/dodaje se
-// lazy loading komponenata
 // lazy loading slika (svih)
 // What's in store sekcija
 // // // mission & vision u gornjem redu
@@ -24,36 +23,48 @@ import { withNamespaces } from "react-i18next";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomeLayout />,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <HomeLayout />
+      </Suspense>
+    ),
     errorElement: <ErrorPage />,
     children: [
       {
         index: true,
-        // loader: landingLoader,
-        // errorElement: <SinglePageError />,
-        element: <HomePage />,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <HomePage />
+          </Suspense>
+        ),
       },
       {
         path: "menu",
-        // errorElement: <SinglePageError />,
-        // loader: singleCocktailLoader,
-        element: <Menu />,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Menu />
+          </Suspense>
+        ),
       },
       {
         path: "menuitem/:id",
-        // errorElement: <SinglePageError />,
-        // loader: singleCocktailLoader,
         element: <SingleMenuItem />,
       },
       {
         path: "contact",
-        // errorElement: <SinglePageError />,
-        // loader: singleCocktailLoader,
-        element: <Contact />,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Contact />
+          </Suspense>
+        ),
       },
       {
         path: "about",
-        element: <About />,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <About />
+          </Suspense>
+        ),
       },
     ],
   },
@@ -63,4 +74,4 @@ const App = () => {
   return <RouterProvider router={router} />;
 };
 
-export default withNamespaces()(App);
+export default App;

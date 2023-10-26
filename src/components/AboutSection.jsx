@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useOutletContext, useNavigate } from "react-router-dom";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import ProgressiveImage from "react-progressive-graceful-image";
+import heroSmall from "../assets/images/hero-test-small.jpg";
 
 const AboutSection = () => {
   const { people } = useOutletContext();
@@ -41,7 +43,17 @@ const AboutSection = () => {
 
       <article className="mt-8 max-w-[500px] mx-auto bg-white">
         <div className="w-full mb-4 h-[250px] sm:h-[300px]">
-          <img src={image} alt={name} className="w-full h-full" />
+          <ProgressiveImage src={image} placeholder={heroSmall}>
+            {(src, loading) => (
+              <img
+                src={src}
+                alt={name}
+                className={`image${
+                  loading ? " loading" : " loaded"
+                } w-full h-full`}
+              />
+            )}
+          </ProgressiveImage>
         </div>
         <div className="pt-2 pb-12">
           <button type="button" className="float-left" onClick={prevPerson}>

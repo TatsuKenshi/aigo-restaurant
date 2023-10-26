@@ -1,9 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import usePageTitle from "../hooks/usePageTitle";
-import Team from "../components/Team";
-import Story from "../components/Story";
 import i18n from "../i18n";
 import { withNamespaces } from "react-i18next";
+import SectionLoading from "../components/SectionLoading";
+
+const Team = lazy(() => import("../components/Team"));
+const Story = lazy(() => import("../components/Story"));
+const FuturePlans = lazy(() => import("../components/FuturePlans"));
 
 const About = () => {
   // page title customization and localization
@@ -17,8 +20,15 @@ const About = () => {
 
   return (
     <div>
-      <Story />
-      <Team />
+      <Suspense fallback={<SectionLoading />}>
+        <Story />
+      </Suspense>
+      <Suspense fallback={<SectionLoading />}>
+        <Team />
+      </Suspense>
+      <Suspense fallback={<SectionLoading />}>
+        <FuturePlans />
+      </Suspense>
     </div>
   );
 };

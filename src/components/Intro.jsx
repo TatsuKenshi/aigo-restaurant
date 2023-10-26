@@ -1,4 +1,7 @@
-import SlickCarousel from "./SlickCarousel";
+import { lazy, Suspense } from "react";
+import SectionLoading from "./SectionLoading";
+
+const SlickCarousel = lazy(() => import("./SlickCarousel"));
 
 const Intro = () => {
   return (
@@ -18,7 +21,9 @@ const Intro = () => {
       </div>
 
       <div className="text-center mt-8 max-w-[1200px] mx-auto">
-        <SlickCarousel />
+        <Suspense fallback={<SectionLoading />}>
+          <SlickCarousel />
+        </Suspense>
       </div>
     </section>
   );
